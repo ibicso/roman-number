@@ -8,6 +8,7 @@
 package it.unipd.mtss;
 
 import java.util.Map;
+import java.util.HashMap;
 
 public class RomanPrinter {
     
@@ -17,6 +18,64 @@ public class RomanPrinter {
 
 
     private static String printAsciiArt(String romanNumber) {
+        Map<Character, String[]> romanAsciiMap = new HashMap<>();
+        romanAsciiMap.put('M', new String[]{
+            "  __  __ ",
+            " |  \\/  |",
+            " | \\  / |",
+            " | |\\/| |",
+            " | |  | |",
+            " |_|  |_|"
+        });
+        romanAsciiMap.put('D', new String[]{
+            "  _____  ",
+            " |  __ \\ ",
+            " | |  | |",
+            " | |  | |",
+            " | |__| |",
+            " |_____/ "
+        });
+        romanAsciiMap.put('C', new String[]{
+            "   _____ ",
+            "  / ____|",
+            " | |     ",
+            " | |     ",
+            " | |____ ",
+            "  \\_____|"
+        });
+        romanAsciiMap.put('L', new String[]{
+            "  _      ",
+            " | |     ",
+            " | |     ",
+            " | |     ",
+            " | |____ ",
+            " |______|"
+        });
+        romanAsciiMap.put('X', new String[]{
+            " __   __",
+            " \\ \\ / /",
+            "  \\ V / ",
+            "   > <  ",
+            "  / . \\ ",
+            " /_/ \\_\\"
+        });
+        romanAsciiMap.put('V', new String[]{
+            " __      __",
+            " \\ \\    / /",
+            "  \\ \\  / / ",
+            "   \\ \\/ /  ",
+            "    \\  /   ",
+            "     \\/    "
+        });
+        romanAsciiMap.put('I', new String[]{
+            "  _____ ",
+            " |_   _|",
+            "   | |  ",
+            "   | |  ",
+            "  _| |_ ",
+            " |_____|"
+        });
+    
         StringBuilder[] rows = new StringBuilder[6];
         for (int i = 0; i < 6; i++) {
             rows[i] = new StringBuilder();
@@ -36,66 +95,4 @@ public class RomanPrinter {
     
         return result.toString();
     }
-
-
-    private static final Map<Character, String[]> romanAsciiMap = Map.of(
-        'M', new String[]{
-            "  __  __ ",
-            " |  \\/  |",
-            " | \\  / |",
-            " | |\\/| |",
-            " | |  | |",
-            " |_|  |_|"
-        },
-        'D', new String[]{
-            "  _____  ",
-            " |  __ \\ ",
-            " | |  | |",
-            " | |  | |",
-            " | |__| |",
-            " |_____/ "
-        },
-        'C', new String[]{
-            "   _____ ",
-            "  / ____|",
-            " | |     ",
-            " | |     ",
-            " | |____ ",
-            "  \\_____|"
-        },
-        'L', new String[]{
-            "  _      ",
-            " | |     ",
-            " | |     ",
-            " | |     ",
-            " | |____ ",
-            " |______|"
-        },
-        'X', new String[]{
-            " __   __",
-            " \\ \\ / /",
-            "  \\ V / ",
-            "   > <  ",
-            "  / . \\ ",
-            " /_/ \\_\\"
-        },
-        'V', new String[]{
-            " __      __",
-            " \\ \\    / /",
-            "  \\ \\  / / ",
-            "   \\ \\/ /  ",
-            "    \\  /   ",
-            "     \\/    "
-        },
-        'I', new String[]{
-            "  _____ ",
-            " |_   _|",
-            "   | |  ",
-            "   | |  ",
-            "  _| |_ ",
-            " |_____|"
-        }
-    );
-
-    
 }
