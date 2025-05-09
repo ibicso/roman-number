@@ -3,8 +3,6 @@
 // Nicolas Fracaro 2076420
 ////////////////////////////////////////////////////////////////////
 
-
-
 package it.unipd.mtss;
 
 import java.util.Map;
@@ -16,10 +14,8 @@ public class RomanPrinter {
         return printAsciiArt(IntegerToRoman.convert(num));
     }
 
-
-    private static String printAsciiArt(String romanNumber) {
-        Map<Character, String[]> romanAsciiMap = new HashMap<>();
-        romanAsciiMap.put('M', new String[]{
+    private static Map<Character, String[]> createRomanAsciiMapPart1(Map<Character, String[]> map) {
+        map.put('M', new String[]{
             "  __  __ ",
             " |  \\/  |",
             " | \\  / |",
@@ -27,7 +23,7 @@ public class RomanPrinter {
             " | |  | |",
             " |_|  |_|"
         });
-        romanAsciiMap.put('D', new String[]{
+        map.put('D', new String[]{
             "  _____  ",
             " |  __ \\ ",
             " | |  | |",
@@ -35,7 +31,7 @@ public class RomanPrinter {
             " | |__| |",
             " |_____/ "
         });
-        romanAsciiMap.put('C', new String[]{
+        map.put('C', new String[]{
             "   _____ ",
             "  / ____|",
             " | |     ",
@@ -43,7 +39,7 @@ public class RomanPrinter {
             " | |____ ",
             "  \\_____|"
         });
-        romanAsciiMap.put('L', new String[]{
+        map.put('L', new String[]{
             "  _      ",
             " | |     ",
             " | |     ",
@@ -51,7 +47,11 @@ public class RomanPrinter {
             " | |____ ",
             " |______|"
         });
-        romanAsciiMap.put('X', new String[]{
+        return map;
+    }
+
+    private static Map<Character, String[]> createRomanAsciiMapPart2(Map<Character, String[]> map) {
+        map.put('X', new String[]{
             " __   __",
             " \\ \\ / /",
             "  \\ V / ",
@@ -59,7 +59,7 @@ public class RomanPrinter {
             "  / . \\ ",
             " /_/ \\_\\"
         });
-        romanAsciiMap.put('V', new String[]{
+        map.put('V', new String[]{
             " __      __",
             " \\ \\    / /",
             "  \\ \\  / / ",
@@ -67,7 +67,7 @@ public class RomanPrinter {
             "    \\  /   ",
             "     \\/    "
         });
-        romanAsciiMap.put('I', new String[]{
+        map.put('I', new String[]{
             "  _____ ",
             " |_   _|",
             "   | |  ",
@@ -75,6 +75,18 @@ public class RomanPrinter {
             "  _| |_ ",
             " |_____|"
         });
+        return map;
+    }
+
+    private static Map<Character, String[]> createRomanAsciiMap() {
+        Map<Character, String[]> romanAsciiMap = new HashMap<>();
+        romanAsciiMap = createRomanAsciiMapPart1(romanAsciiMap);
+        romanAsciiMap = createRomanAsciiMapPart2(romanAsciiMap);
+        return romanAsciiMap;
+    }
+
+    private static String printAsciiArt(String romanNumber) {
+        Map<Character, String[]> romanAsciiMap = createRomanAsciiMap();
     
         StringBuilder[] rows = new StringBuilder[6];
         for (int i = 0; i < 6; i++) {
