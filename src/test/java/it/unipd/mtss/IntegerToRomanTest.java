@@ -68,7 +68,7 @@ public class IntegerToRomanTest {
         assertEquals("CD", IntegerToRoman.convert(400));
         assertEquals("D", IntegerToRoman.convert(500));
     }
-    
+
     @Test
     public void testConvertTo1000() {
         assertEquals("DC", IntegerToRoman.convert(600));
@@ -78,6 +78,14 @@ public class IntegerToRomanTest {
         assertEquals("M", IntegerToRoman.convert(1000));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testNegativeNumber() {
+        IntegerToRoman.convert(-1);
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void testZero() {
+        IntegerToRoman.convert(0);
+    }
     @Test(expected = IllegalArgumentException.class)
     public void testNumberGreaterThan1000() {
         IntegerToRoman.convert(1001);

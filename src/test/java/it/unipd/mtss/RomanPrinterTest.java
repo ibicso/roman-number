@@ -269,7 +269,7 @@ public class RomanPrinterTest {
             RomanPrinter.print(100)
         );
     }
-    
+
     @Test
         public void testPrintTo500() {
             // Test per il numero 200 (CC)
@@ -380,6 +380,15 @@ public class RomanPrinterTest {
             );
         }
 
+        // Test per errori out of bounds
+        @Test(expected = IllegalArgumentException.class)
+        public void testPrintNegativeNumber() {
+            RomanPrinter.print(-1);
+        }
+        @Test(expected = IllegalArgumentException.class)
+        public void testPrintZero() {
+            RomanPrinter.print(0);
+        }
 
         @Test(expected = IllegalArgumentException.class)
         public void testPrintNumberGreaterThan1000() {
