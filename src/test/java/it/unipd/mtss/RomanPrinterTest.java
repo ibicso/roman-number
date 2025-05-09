@@ -240,4 +240,10 @@ public class RomanPrinterTest {
                 RomanPrinter.print(1000)
             );
         }
+
+
+        @Test(expected = IllegalArgumentException.class)
+        public void testPrintNumberGreaterThan1000() {
+            RomanPrinter.print(1001);
+        }
 }

@@ -54,4 +54,9 @@ public class IntegerToRomanTest {
         assertEquals("CM", IntegerToRoman.convert(900));
         assertEquals("M", IntegerToRoman.convert(1000));
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testNumberGreaterThan1000() {
+        IntegerToRoman.convert(1001);
+    }
 }
