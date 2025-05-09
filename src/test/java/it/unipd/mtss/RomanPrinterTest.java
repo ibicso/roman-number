@@ -269,7 +269,57 @@ public class RomanPrinterTest {
             RomanPrinter.print(100)
         );
     }
-
+    
+    @Test
+        public void testPrintTo500() {
+            // Test per il numero 200 (CC)
+            assertEquals(
+                "   _____      _____   \n" +
+                "  / ____|    / ____|  \n" +
+                " | |        | |       \n" +
+                " | |        | |       \n" +
+                " | |____    | |____   \n" +
+                "  \\_____|    \\_____|  \n" +
+                "",
+                RomanPrinter.print(200)
+            );
+            
+            // Test per il numero 300 (CCC)
+            assertEquals(
+                "   _____      _____      _____   \n" +
+                "  / ____|    / ____|    / ____|  \n" +
+                " | |        | |        | |       \n" +
+                " | |        | |        | |       \n" +
+                " | |____    | |____    | |____   \n" +
+                "  \\_____|    \\_____|    \\_____|  \n" +
+                "",
+                RomanPrinter.print(300)
+            );
+            
+            // Test per il numero 400 (CD)
+            assertEquals(
+                "   _____     _____    \n" +
+                "  / ____|   |  __ \\   \n" +
+                " | |        | |  | |  \n" +
+                " | |        | |  | |  \n" +
+                " | |____    | |__| |  \n" +
+                "  \\_____|   |_____/   \n" +
+                "",
+                RomanPrinter.print(400)
+            );
+            
+            // Test per il numero 500 (D)
+            assertEquals(
+                "  _____    \n" +
+                " |  __ \\   \n" +
+                " | |  | |  \n" +
+                " | |  | |  \n" +
+                " | |__| |  \n" +
+                " |_____/   \n" +
+                "",
+                RomanPrinter.print(500)
+            );
+        }
 
         // Test per numeri fino a 1000
         @Test
