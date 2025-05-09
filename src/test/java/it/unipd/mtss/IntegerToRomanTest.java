@@ -29,4 +29,11 @@ public class IntegerToRomanTest {
         assertEquals("V", IntegerToRoman.convert(5));
         assertEquals("VI", IntegerToRoman.convert(6));
     }
+
+    @Test
+    public void testConvertTo20() {
+        assertEquals("XV", IntegerToRoman.convert(15));
+        assertEquals("XIX", IntegerToRoman.convert(19));
+        assertEquals("XX", IntegerToRoman.convert(20));
+    }
 }
