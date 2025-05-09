@@ -172,7 +172,45 @@ public class RomanPrinterTest {
             );
         }
 
-
+        // Test per numeri fino a 50
+            @Test
+            public void testPrintTo50() {
+                // Test per il numero 30 (XXX)
+                assertEquals(
+                    " __   __   __   __   __   __  \n" +
+                    " \\ \\ / /   \\ \\ / /   \\ \\ / /  \n" +
+                    "  \\ V /     \\ V /     \\ V /   \n" +
+                    "   > <       > <       > <    \n" +
+                    "  / . \\     / . \\     / . \\   \n" +
+                    " /_/ \\_\\   /_/ \\_\\   /_/ \\_\\  \n" +
+                    "",
+                    RomanPrinter.print(30)
+                );
+                
+                // Test per il numero 40 (XL)
+                assertEquals(
+                    " __   __    _        \n" +
+                    " \\ \\ / /   | |       \n" +
+                    "  \\ V /    | |       \n" +
+                    "   > <     | |       \n" +
+                    "  / . \\    | |____   \n" +
+                    " /_/ \\_\\   |______|  \n" +
+                    "",
+                    RomanPrinter.print(40)
+                );
+                
+                // Test per il numero 50 (L)
+                assertEquals(
+                    "  _        \n" +
+                    " | |       \n" +
+                    " | |       \n" +
+                    " | |       \n" +
+                    " | |____   \n" +
+                    " |______|  \n" +
+                    "",
+                    RomanPrinter.print(50)
+                );
+            }
     // Test per numeri fino a 100
     @Test
     public void testPrintTo100() {

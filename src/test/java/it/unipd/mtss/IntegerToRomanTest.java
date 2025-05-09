@@ -46,6 +46,13 @@ public class IntegerToRomanTest {
     }
 
     @Test
+    public void testConvertTo50() {
+        assertEquals("XXX", IntegerToRoman.convert(30));
+        assertEquals("XL", IntegerToRoman.convert(40));
+        assertEquals("L", IntegerToRoman.convert(50));
+    }
+
+    @Test
     public void testConvertTo100() {
         assertEquals("LX", IntegerToRoman.convert(60));
         assertEquals("LXX", IntegerToRoman.convert(70));
