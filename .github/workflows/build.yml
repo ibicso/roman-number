@@ -16,8 +16,8 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Build and verify
-        run: mvn -B verify --file pom.xml
+      - name: Build 
+        run: mvn -B package --file pom.xml
       - name: Test with JaCoCo
         run: mvn test jacoco:report
       - name: Report to Coveralls
