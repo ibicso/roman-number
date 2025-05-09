@@ -84,6 +84,57 @@ public class RomanPrinterTest {
                 RomanPrinter.print(6)
             );
         }
+        // Test per i numeri 7-10
+            @Test
+            public void testPrint7to10() {
+                // Test per il numero 7 (VII)
+                assertEquals(
+                    " __      __    _____     _____   \n" +
+                    " \\ \\    / /   |_   _|   |_   _|  \n" +
+                    "  \\ \\  / /      | |       | |    \n" +
+                    "   \\ \\/ /       | |       | |    \n" +
+                    "    \\  /       _| |_     _| |_   \n" +
+                    "     \\/       |_____|   |_____|  \n" +
+                    "",
+                    RomanPrinter.print(7)
+                );
+                
+                // Test per il numero 8 (VIII)
+                assertEquals(
+                    " __      __    _____     _____     _____   \n" +
+                    " \\ \\    / /   |_   _|   |_   _|   |_   _|  \n" +
+                    "  \\ \\  / /      | |       | |       | |    \n" +
+                    "   \\ \\/ /       | |       | |       | |    \n" +
+                    "    \\  /       _| |_     _| |_     _| |_   \n" +
+                    "     \\/       |_____|   |_____|   |_____|  \n" +
+                    "",
+                    RomanPrinter.print(8)
+                );
+                
+                // Test per il numero 9 (IX)
+                assertEquals(
+                    "  _____    __   __  \n" +
+                    " |_   _|   \\ \\ / /  \n" +
+                    "   | |      \\ V /   \n" +
+                    "   | |       > <    \n" +
+                    "  _| |_     / . \\   \n" +
+                    " |_____|   /_/ \\_\\  \n" +
+                    "",
+                    RomanPrinter.print(9)
+                );
+                
+                // Test per il numero 10 (X)
+                assertEquals(
+                    " __   __  \n" +
+                    " \\ \\ / /  \n" +
+                    "  \\ V /   \n" +
+                    "   > <    \n" +
+                    "  / . \\   \n" +
+                    " /_/ \\_\\  \n" +
+                    "",
+                    RomanPrinter.print(10)
+                );
+            }
 
         @Test
         public void testPrintTo20() {
